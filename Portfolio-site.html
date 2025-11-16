@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matheus Lampugnani - Portfólio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --cor-primaria: #222;
+      --cor-secundaria: #007bff;
+      --cor-fundo: #f4f4f4;
+      --cor-fundo-card: #ffffff;
+      --cor-texto: #333;
+      --cor-texto-claro: #f5f5f5;
+      --sombra-card: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--cor-fundo);
+      color: var(--cor-texto);
+    }
+
+    section {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--cor-secundaria);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #0056b3;
+    }
+    
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+
+    header {
+      background: var(--cor-primaria);
+      color: var(--cor-texto-claro);
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+
+    nav {
+      background: rgba(0,0,0,0.1);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(5px);
+    }
+
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      color: var(--cor-texto-claro);
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    nav ul li a:hover {
+      background: var(--cor-secundaria);
+      color: var(--cor-texto-claro);
+    }
+
+    .title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      border-left: 5px solid var(--cor-secundaria);
+      padding-left: 10px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--cor-fundo-card);
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: var(--sombra-card);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card ul {
+    list-style: none; /* Remove as bolinhas */
+    padding-left: 0;  /* Remove o recuo para alinhar com o título */
+    }
+
+    .card li {
+    border-bottom: 1px solid #eee; /* Linha sutil entre itens */
+    padding: 8px 0;
+    margin: 0;
+    }
+    .card + .card {
+      margin-top: 20px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--cor-primaria);
+      border-bottom: 2px solid var(--cor-fundo);
+      padding-bottom: 10px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card .tags {
+      margin: 15px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .project-card .tag {
+      background: var(--cor-fundo);
+      color: var(--cor-texto);
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    
+    .project-links {
+      margin-top: 15px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--cor-secundaria);
+      color: var(--cor-texto-claro);
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: 600;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .btn:hover {
+      background: #0056b3;
+      color: var(--cor-texto-claro);
+      transform: scale(1.05);
+    }
+    .btn.secondary {
+      background: var(--cor-fundo);
+      color: var(--cor-primaria);
+      border: 1px solid var(--cor-primaria);
+    }
+    .btn.secondary:hover {
+      background: var(--cor-primaria);
+      color: var(--cor-texto-claro);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: var(--cor-primaria);
+      color: var(--cor-texto-claro);
+      margin-top: 50px;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+    footer .social-links {
+      margin: 15px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    footer .social-links a {
+      color: var(--cor-texto-claro);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    footer .social-links a:hover {
+      color: var(--cor-secundaria);
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      nav ul {
+        gap: 10px;
+      }
+      .title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Matheus Teixeira Lampugnani</h1>
+    <p>Desenvolvedor de Software | Criador de Soluções</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#sobre">Sobre Mim</a></li>
+      <li><a href="#formacao">Formação</a></li>
+      <li><a href="#experiencia">Experiência</a></li>
+      <li><a href="#competencias">Competências</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <section id="sobre">
+    <h2 class="title">Sobre Mim</h2>
+    <p>Profissional dedicado à criação de soluções eficientes, com foco em desenvolvimento, análise e resolução de problemas. Experiência em projetos variados, demonstrando capacidade de aprender rápido, colaborar e entregar resultados de qualidade.</p>
+    <p>Estou sempre em busca de novos desafios e oportunidades para aplicar meu conhecimento em tecnologia para impactar positivamente negócios e usuários.</p>
+  </section>
+
+  <section id="formacao">
+    <h2 class="title">Formação Acadêmica</h2>
+    <div class="card">
+      <h3>Engenharia de Software</h3>
+      <p><strong>Instituição:</strong> Universidade de Rio Verde (UniRV)</p>
+      <p><strong>Status:</strong> Cursando (Ensino Superior)</p>
+    </div>
+    <div class="card">
+      <h3>Tecnologia da Informação e Comunicação</h3>
+      <p><strong>Instituição:</strong> Senai</p>
+      <p><strong>Status:</strong> Concluído</p>
+    </div>
+    <div class="card">
+      <h3>Lógica de Programação</h3>
+      <p><strong>Instituição:</strong> Senai</p>
+      <p><strong>Status:</strong> Concluído</p>
+    </div>
+  </section>
+  
+  <section id="experiencia">
+    <h2 class="title">Experiência Profissional</h2>
+    
+    <div class="card">
+      <h3>Assistente de Infraestrutura</h3>
+      <p><strong>Empresa:</strong> Videplast Indústria de Embalagens</p>
+      <p><strong>Período:</strong> Jun/2025 - Atualmente</p>
+      <ul>
+        <li>Atuação direta na infraestrutura de TI e suporte técnico.</li>
+        <li>Manutenção de sistemas e garantia da disponibilidade de serviços.</li>
+      </ul>
+    </div>
+    
+    <div class="card"> <h3>Assistente de Suporte Júnior & Estagiário</h3>
+      <p><strong>Empresa:</strong> Vólus Gestão de Benefícios</p>
+      <p><strong>Período:</strong> Mar/2022 - Set/2024</p>
+      <ul>
+        <li>Iniciei como <strong>Estagiário de TI</strong>, sendo promovido a <strong>Assistente de Suporte Júnior</strong>.</li>
+        <li>Responsável pelo suporte técnico aos usuários e resolução de problemas de hardware/software.</li>
+        <li>Posteriormente, atuei como Assistente de Controladoria, expandindo a visão de processos internos.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="competencias">
+    <h2 class="title">Competências</h2>
+    <div class="skills-grid">
+      <div class="card">
+        <h3>Front-End & Web</h3>
+        <ul>
+          <li>HTML & CSS</li>
+          <li>JavaScript (ES6+)</li>
+          <li>TypeScript</li>
+          <li>React e Vue.js</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Back-End</h3>
+        <ul>
+          <li>Node.js</li>
+          <li>Python (Django)</li>
+          <li>Java</li>
+          <li>APIs RESTful</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Banco de Dados & DevOps</h3>
+        <ul>
+          <li>SQL (MySQL, PostgreSQL, Oracle)</li>
+          <li>NoSQL (Firebase)</li>
+          <li>Git & GitHub</li>
+          <li>Docker</li>
+          <li>CI/CD (GitHub Actions)</li>
+          <li>Supabase</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <h2 class="title">Projetos</h2>
+    <div class="projects">
+      
+      <div class="card project-card">
+        <div>
+          <h3>💸 MoneyBoard</h3>
+          <p>Painel financeiro interativo para controle de receitas, despesas e metas, com dashboard e integração ao Supabase.</p>
+          <div class="tags">
+            <span class="tag">Supabase</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Dashboard</span>
+            <span class="tag">Finanças</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/MatheusTLampugnani/MoneyBoard" target="_blank" class="btn">Ver Código</a>
+        </div>
+      </div>
+      
+      <div class="card project-card">
+        <div>
+          <h3>✅ Sistema de Checklist</h3>
+          <p>Sistema de checklist com status, validação e funcionalidades de assinatura digital.</p>
+          <div class="tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">Validação</span>
+            <span class="tag">Assinatura</span>
+            <span class="tag">Back-end</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/MatheusTLampugnani/checklist" target="_blank" class="btn">Ver Código</a>
+        </div>
+      </div>
+      
+      <div class="card project-card">
+        <div>
+          <h3>🏥 Mais-Clínica</h3>
+          <p>Sistema de controle para clínicas médicas com funcionalidades administrativas e de gestão.</p>
+          <div class="tags">
+            <span class="tag">Gestão</span>
+            <span class="tag">Saúde</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Node.js</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/MatheusTLampugnani/mais-clinica" target="_blank" class="btn">Ver Código</a>
+        </div>
+      </div>
+
+      <div class="card project-card">
+        <div>
+          <h3>💻 SEI</h3>
+          <p>Projeto educativo para prática de JavaScript e manipulação do DOM.</p>
+          <div class="tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">DOM</span>
+            <span class="tag">HTML</span>
+            <span class="tag">Estudo</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/MatheusTLampugnani/sei" target="_blank" class="btn">Ver Código</a>
+        </div>
+      </div>
+
+      <div class="card project-card">
+        <div>
+          <h3>🌐 Projeto-Treinamento</h3>
+          <p>Layout e componentes web para fins de estudo e prototipação de interfaces.</p>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Layout</span>
+            <span class="tag">Estudo</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/MatheusTLampugnani/Projeto-Treinamento" target="_blank" class="btn">Ver Código</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="contato">
+    <p>Vamos conversar!</p>
+    <p>Entre em contato: <strong>matheuslampugnani123@gmail.com</strong></p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/matheus-lampugnani-1156b1231/" target="_blank">LinkedIn</a>
+      <span>•</span>
+      <a href="https://github.com/MatheusTLampugnani" target="_blank">GitHub</a>
+    </div>s
+  </footer>
+
+</body>
+</html>
